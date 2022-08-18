@@ -30,8 +30,6 @@ include("footer.php");
                     </tr>
                 </thead>
                 <tbody>
-                   
-                   
                 </tbody>
             </table>
 
@@ -39,30 +37,57 @@ include("footer.php");
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="modal">Adicionar Usuário</h5>
+                            <h5 class="modal-title" id="modalTitle">Adicionar Usuário</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+
+                        <form>
+                            <div class="modal-body">
+
+                                <input type="hidden" id="userId" name="userId">
+
+                                <div class="mb-3">
+                                    <label for="nome" class="form-label">Nome</label>
+                                    <input type="text" class="form-control" id="nome" name="nome" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="dataNasc" class="form-label">Data de Nascimento</label>
+                                    <input type="text" class="form-control" id="dataNasc" name="dataNasc" required>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="cpf" class="form-label">CPF</label>
+                                    <input type="text" class="form-control" id="cpf" name="cpf" required>
+                                </div>
+
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                <button type="submit" class="btn btn-primary" id="btnSave" onclick="saveUser()">Salvar</button>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="modalExcluirUsuario" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Excluir Usuário</h5>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
 
-                            <div class="mb-3">
-                                <label for="nome" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="nome" name="nome">
-                            </div>
+                            <input type="hidden" id="deleteUserId" name="deleteUserId">
 
-                            <div class="mb-3">
-                                <label for="dataNasc" class="form-label">Data de Nascimento</label>
-                                <input type="text" class="form-control" id="dataNasc" name="dataNasc">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="cpf" class="form-label">CPF</label>
-                                <input type="text" class="form-control" id="cpf" name="cpf">
-                            </div>
-
+                            <p>Tem certeza que deseja excluir este usuario ?</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-primary" onclick="saveUser()">Salvar</button>
+                            <button type="button" class="btn btn-danger" onclick="realDeleteUser()">Excluir</button>
                         </div>
                     </div>
                 </div>
@@ -76,5 +101,9 @@ include("footer.php");
 <style type="text/css">
     .space {
         padding: 15px;
+    }
+
+    .table>tbody {
+        vertical-align: baseline;
     }
 </style>
