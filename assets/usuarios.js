@@ -154,20 +154,18 @@ function excluir(userId) {
 function realDeleteUser() {
   var deleteUserId = document.getElementById("deleteUserId").value;
 
-  fetch(`../models/usuarios/excluirUsuario.php?userId=${deleteUserId}`, { method: 'DELETE' })
+  fetch(`../models/usuarios/excluirUsuario.php?userId=${deleteUserId}`, {
+    method: "DELETE",
+  })
     .then(function (response) {
-    
-     
-          $("#modalExcluirUsuario").modal("hide");
+      $("#modalExcluirUsuario").modal("hide");
 
-          var modalSuccess = new bootstrap.Modal(
-            document.getElementById("modalSuccess")
-          );
-          modalSuccess.show();
+      var modalSuccess = new bootstrap.Modal(
+        document.getElementById("modalSuccess")
+      );
+      modalSuccess.show();
 
-          getUsuarios();
-        
-     
+      getUsuarios();
     })
     .catch(function (err) {
       console.error("Erro", err);
