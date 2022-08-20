@@ -18,6 +18,7 @@
                   <li><a class="dropdown-item" href="views/usuarios.php">Usuários</a></li>
                   <li><a class="dropdown-item" href="#">Autores</a></li>
                   <li><a class="dropdown-item" href="#">Editoras</a></li>
+                  <li><hr class="dropdown-divider"></li>
                   <li><a class="dropdown-item" href="#">Livros</a></li>
                 </ul>
               </li>
